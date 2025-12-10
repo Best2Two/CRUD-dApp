@@ -11,6 +11,10 @@ This architecture resolves these issues by establishing a **Cryptographic Proof 
 1.  A dedicated **Blockchain System** that serves as the decentralized security anchor and validation layer for general transactions.
 2.  A specialized **CRUD Back-End Design Pattern** that fundamentally rewires how data operations are handled. This pattern secures the workflow by connecting every operation directly to the blockchain system, ensuring that validation and synchronization occur on the ledger before any data is ever written to the local database.
 
+The following diagram illustrates the fundamental interactions between the backend system and the auditable ledger layer.
+
+![Use Case Diagram for Blockchain Service System](\assets\basic-use-case-0001.jpg)
+
 ## 🛠️ 2. The Blockchain Service System Summary
 
 This phase establishes the foundational security layer for the entire application, serving as the immutable audit trail and synchronization mechanism. The system is composed of two interacting components: the secure client and the distributed ledger (smart contract).
