@@ -10,3 +10,13 @@ This architecture resolves these issues by establishing a **Cryptographic Proof 
 **To achieve this, the solution is built upon two integrated components:**
 1.  A dedicated **Blockchain System** that serves as the decentralized security anchor and validation layer for general transactions.
 2.  A specialized **CRUD Back-End Design Pattern** that fundamentally rewires how data operations are handled. This pattern secures the workflow by connecting every operation directly to the blockchain system, ensuring that validation and synchronization occur on the ledger before any data is ever written to the local database.
+
+
+## 🛠️ Setup & Initialization
+**Prerequisites:** Node.js, Ganache (Port 7545), and Truffle.
+
+```bash
+git clone [https://github.com/Best2Two/CRUD-dApp.git](https://github.com/Best2Two/CRUD-dApp.git)
+cd CRUD-dApp/blockchain
+npm install            # Installs dependencies (creates node_modules)
+truffle migrate        # Deploys contracts
