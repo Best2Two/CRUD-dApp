@@ -32,12 +32,13 @@ This component sits on the application server and acts as the trusted link betwe
 * **Execution:** Handles the entire process of securely sending operations to the ledger for validation and registration (`validateAndSubmit`).
 * **Querying:** Provides read access to the ledger's history, allowing the system to verify the history of any user (`RetrieveTransactionHistory`) or confirm the identity of the signer for any past operation (`findSignerByData`).
 
-
-## 👨🏻‍💻 3. The Backend Design Pattern: CRUD Rewired
+### 3. The Backend Design Pattern: CRUD Rewired
 
 This section details the workflow and relationships between the traditional business modules (CRUD) and the specialized Blockchain Service, as illustrated in the Class Diagram below. The core principle is to enforce a **Blockchain-First** approach for critical state changes.
 
-### 3.1 The Dependency Model (The Dotted Arrows)
+![Class Diagram showing the Backend Design Pattern](assets/backend-design-pattern_page-0001.jpg)
+
+#### 3.1 The Dependency Model (The Dotted Arrows)
 
 The dashed arrows in the diagram represent **Dependency** or **Usage** relationships, showing which class relies on another to perform its tasks.
 
@@ -45,7 +46,7 @@ The dashed arrows in the diagram represent **Dependency** or **Usage** relations
     * *Example:* An `Update` operation calls `validateAndSubmit` on the client. Only if the client returns `true` (meaning the operation was successfully secured on the ledger) does the `Update` module proceed to modify the local data.
 * **Client-to-Registry Dependence:** The `Transaction Registry Client` depends on the **`TransactionRegistry`** smart contract to execute validation and query ledger history.
 
-### 3.2 The Secure Workflow (Execution vs. Query)
+#### 3.2 The Secure Workflow (Execution vs. Query)
 
 The pattern strictly separates the execution flow into two distinct responsibilities managed by the `Transaction Registry Client`:
 
@@ -61,7 +62,7 @@ The pattern strictly separates the execution flow into two distinct responsibili
 3.  The client internally uses the **`SecretSigningKey`** to sign the transaction and broadcasts it to the ledger.
 4.  The Smart Contract (`TransactionRegistry`) checks for uniqueness based on the operation data's hash. If unique, it registers the hash and the sender's Public Address.
 5.  The client returns a boolean (`true`/`false`) status to the calling module.
-6.  The service module proceeds with the local database commit **only if** the validation was successful. This ensures the database state is always subordinate to the cryptographically proven ledger state.
+6.  الخدمة تستمر في كتابة التغييرات على قاعدة البيانات المحلية **فقط إذا** تم التحقق بنجاح.
 
 **B. The Query Flow (Read):**
 
