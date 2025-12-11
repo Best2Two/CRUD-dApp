@@ -35,17 +35,15 @@ getSigner(operation, recordId, timestamp) → address
 ---
 
 ### Component 3: Unit Tests ✅
-**File:** `blockchain/test/transaction_registry.test.js`
+**File:** `blockchain/test/TestRegistry.js`
 
 **Test Coverage:**
-- ✅ 12+ comprehensive test cases
+- ✅ Comprehensive test cases
 - ✅ Tests for `validateTransaction()` function
 - ✅ Tests for `getSigner()` function
 - ✅ Integration tests for CRUD workflows
 - ✅ Multi-user scenarios
 - ✅ Event emission verification
-
-**Lines of Code:** 300+ lines of complete test suite
 
 **Run with:** `truffle test`
 
@@ -127,14 +125,15 @@ CRUD-dApp-main/
 │
 ├── blockchain/
 │   ├── contracts/
-│   │   ├── TransactionRegistry.sol ✅ (78 lines)
+│   │   ├── TransactionRegistry.sol ✅ (73 lines)
 │   │   └── interfaces/
 │   │       └── ITransactionRegistry.sol
 │   ├── migrations/
 │   │   ├── 1_initial_migration.js ✅ (7 lines)
 │   │   └── 2_deploy_registry.js ✅ (7 lines)
 │   ├── test/
-│   │   └── transaction_registry.test.js ✅ (300+ lines)
+│   │   └── TestRegistry.js ✅ (Comprehensive test suite)
+│   ├── build/ (Generated artifacts)
 │   └── truffle-config.js
 │
 ├── backend/
@@ -149,7 +148,14 @@ Total Implementation: 1,400+ lines of code
 
 ---
 
-## 🎯 How the System Works Together
+## 🎯 Build & Compilation Status
+
+**Current Compiler:** solc 0.8.21+commit.d9974bed.Emscripten.clang  
+**Pragma Version:** ^0.8.21 (compatible with 0.8.31)  
+**Build Status:** ✅ Successfully compiled  
+**Build Location:** `blockchain/build/contracts/`
+
+---
 
 ```
 ┌─────────────────────────────────────────────────────────┐
