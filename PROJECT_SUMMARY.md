@@ -381,7 +381,7 @@ Runs comprehensive test suite covering:
 - **Framework:** Truffle
 - **Network:** Ganache (development), configurable for others
 
----
+----
 
 **Last Updated:** December 11, 2025  
 **Project Status:** ✅ Core smart contract implementation complete  
